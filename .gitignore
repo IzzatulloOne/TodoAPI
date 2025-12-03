@@ -1,1 +1,4 @@
 _pacache__/
+*.pyc
+__pycache__/
+staticfiles/
