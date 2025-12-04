@@ -7,11 +7,10 @@ from todo_app.models import Todo
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command as CommandFilter
 
-TOKEN = "ВАШ_ТОКЕН_БОТА"
+TOKEN = "8534351601:AAEqQI5kBngf3txhwoRedzTcpKGuOId2cI8"
 
 User = get_user_model()
 
-# --- Вспомогательные функции ---
 async def get_user(message: types.Message):
     """
     Получаем пользователя по telegram_id. Если нет, возвращаем None.
@@ -23,7 +22,6 @@ async def get_user(message: types.Message):
         return None
 
 
-# --- Хендлеры ---
 async def cmd_start(message: types.Message):
     await message.answer(
         "Привет! Это TODO бот.\n"
@@ -131,12 +129,10 @@ async def cmd_done(message: types.Message):
     await message.answer("Задача выполнена ✔️")
 
 
-# --- Основной цикл бота ---
 async def run_bot():
     bot = Bot(TOKEN)
     dp = Dispatcher()
 
-    # регистрация хендлеров
     dp.message.register(cmd_start, CommandFilter("start"))
     dp.message.register(cmd_register, CommandFilter("register"))
     dp.message.register(cmd_login, CommandFilter("login"))
@@ -147,7 +143,6 @@ async def run_bot():
     await dp.start_polling(bot)
 
 
-# --- Команда Django ---
 class Command(BaseCommand):
     help = "Start Telegram Bot"
 
