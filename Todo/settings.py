@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'todo_app.apps.TodoAppConfig',
+    'telegram_assistant.apps.TelegramAssistantConfig',
 ]
 
 MIDDLEWARE = [
