@@ -6,9 +6,6 @@ User = get_user_model()
 
 
 class TelegramSession(models.Model):
-    """
-    Сессия авторизации пользователя в Telegram-боте
-    """
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
